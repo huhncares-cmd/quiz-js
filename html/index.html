@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <title>Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">    
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<form>
+<nav class="navbar navbar-dark bg-dark">
+<a class="navbar-brand" href="zindex.html">Quiz</a>
+<span class="navbar-text">
+<a class="btn btn-outline-warning" href="zindex.html">
+Next
+</a>
+</span>
+</nav>
+ <script src="../js/main.js"></script>
+<script>
+let name = readName();
+		if (name == '') {
+		  name = window.prompt('What is your name?')
+		  saveName();
+		}
+		
+		if (name == 'null') {
+		  name = window.prompt('What is your name?')
+		  saveName();
+		}
+		
+		function saveName(){
+		localStorage.setItem('name', name);
+		}
+		
+		function readName (){
+		let name = localStorage.getItem('name')
+		if (name == null ||name ==''){
+			name = [];
+		} else {
+			name = name.split(',')
+		}
+			return name;
+		}
+</script>
+</form>
+</body>
+</html>

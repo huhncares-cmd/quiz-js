@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <title>Quiz</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta charset="utf-8">    
+	 <link rel="stylesheet" href="style.css">
+	 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src= 
+    "https://smtpjs.com/v3/smtp.js"> 
+  </script> 
+  <script>
+p = localStorage.getItem("p")
+name = localStorage.getItem("name")
+//send E-Mail
+function sendEmail(){
+      Email.send({ 
+        Host: "SMTP-Server", 
+        Username: "example@example.com", 
+        Password: "password", 
+        To: 'example@example.com', 
+        From: "example@example.com", 
+        Subject:  name, 
+        Body: p, 
+      }) 
+        .then(function (message) { 
+          alert("mail sent successfully")
+          localStorage.setItem("p", "")
+        }); 
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+<a id="a" class="navbar-brand" href="index.html">Okay, thanks for passing the quiz!</a>
+<span class="navbar-text">
+<form method="post"> 
+    <input class="btn btn-outline-warning" type="button" value="End!" 
+        onclick="sendEmail()" /> 
+  </form> 
+</span>
+</nav>
+</body>
+</html>
