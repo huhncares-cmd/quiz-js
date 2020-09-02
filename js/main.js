@@ -1,24 +1,23 @@
-let login = ""
 let p = 0
-function right1(){    
-	alert("Yeah, right!")
-	$: p = "|"    	
+function right1(){
+	alert("Yes, right!")
+	$: p = 1
 	localStorage.setItem("p", p)
 }
-function wrong1(){  
-	alert("Oh no, wrong!")
-	$: p = ""    	
+function wrong1(){
+	alert("Falsch!")
+	$: p = ""
 	localStorage.setItem("p", p)
 }
-function right(){   
-	alert("Yeah, right!")
-	p = localStorage.getItem("p")    	
-	$: p = p + "|"    	
+function right(){
+	alert("Richtig!")
+	p = localStorage.getItem("p")
+	$: p++
 	localStorage.setItem("p", p)
 }
-function wrong(){   
-	alert("Oh no, wrong!")
-	p = localStorage.getItem("p")    	
-	$: p = p    	
+function wrong(){
+	alert("Falsch!")
+	p = localStorage.getItem("p")
+	$: p = p
 	localStorage.setItem("p", p)
-}   
+}
