@@ -5,7 +5,7 @@ function right1(){
 	localStorage.setItem("p", p)
 }
 function wrong1(){
-	alert("Falsch!")
+	alert("Oh no, wrong")
 	$: p = ""
 	localStorage.setItem("p", p)
 }
@@ -16,7 +16,7 @@ function right(){
 	localStorage.setItem("p", p)
 }
 function wrong(){
-	alert("Falsch!")
+	alert("Oh no, wrong!")
 	p = localStorage.getItem("p")
 	$: p = p
 	localStorage.setItem("p", p)
