@@ -10,7 +10,7 @@ function wrong1(){
 	localStorage.setItem("p", p)
 }
 function right(){
-	alert("Richtig!")
+	alert("Yes, right!")
 	p = localStorage.getItem("p")
 	$: p++
 	localStorage.setItem("p", p)
